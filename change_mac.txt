@@ -5,3 +5,15 @@ sudo ifconfig <interface-name> up
 ip link show
 
 sudo macchanger -r wlan0
+
+
+//
+
+
+wlan0mon down
+iwconfig
+dev wlan0mon del
+systemctl restart NetworkManager
+sudo iw phy phy0 interface add wlan0 type managed
+
+
